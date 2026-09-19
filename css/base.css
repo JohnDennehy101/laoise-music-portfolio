@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'SyndebukFill';
+    src: url('../assets/fonts/SyndebukFill/font.woff2') format('woff2'),
+        url('../assets/fonts/SyndebukFill/font.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    display: flex;
+    font-family: "SyndebukFill", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    margin: 0 5%;
+    align-items: flex-start;
+}
+
+.image-section {
+    flex: 5 1 0px;
+    min-width: 0;
+    height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#index-header {
+    color: #ff66c4;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 2rem 5% 1rem 5%;
+    padding: 0;
+}
+
+
+/* Start of Footer Styles */
+.site-footer {
+    width: 90%;
+    margin: 0 auto;
+    padding: 3rem 0 0 0;
+    box-sizing: border-box;
+    background-color: black;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    gap: 1.25rem;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a.current {
+    color: #ff69b4;
+}
+
+.footer-links a:hover {
+    color: #ff69b4;
+}
+
+.footer-links:has(a:hover) a.current {
+    color: #ffffff;
+}
+
+.footer-links:has(a.current:hover) a.current {
+    color: #ff69b4;
+}
+
+.footer-divider {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .site-footer {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 0 1.5rem 0;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .footer-links a {
+        font-size: 1.25rem;
+        white-space: nowrap;
+    }
+
+    .footer-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+}
+
+/* End of Footer Styles */
+
+
+/* Start of Mobile & Tablet Navigation Styles */
+.menu-toggle {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .site-footer {
+        display: none;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 1.8rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background-color: pink;
+        display: block;
+    }
+
+    .mobile-nav.is-active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        z-index: 90;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mobile-links a {
+        color: #ffffff;
+        font-size: 1.75rem;
+        text-decoration: none;
+    }
+
+    .mobile-links a.current {
+        color: #ff66c4;
+    }
+}
+
+/* End of Mobile & Tablet Navigation Styles */
+
+/* Start of Responsive Styles */
+
+/* Mobile Styles (Screens up to 768px) */
+@media (max-width: 768px) {
+    #index-header {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+    }
+
+    main.container {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0;
+    }
+
+    .image-section {
+        flex: 1 1 100%;
+        width: 100%;
+        max-height: none;
+        display: block;
+        padding: 0;
+    }
+}
+
+/* Tablet Styles (Screens 769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+        margin: 1rem;
+    }
+
+    .image-section {
+        flex: 1 1 100%;
+        width: 100%;
+        max-height: none;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    #index-header {
+        margin: 1.5rem 5% 0.5rem 5%;
+        font-size: clamp(3rem, 6vw, 4rem);
+    }
+}
+
+/* End of Responsive Styles */
