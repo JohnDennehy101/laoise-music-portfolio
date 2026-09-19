@@ -1,0 +1,129 @@
+/* Start of About Page Styles */
+.page-wrapper-about {
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.main-image-about {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+}
+
+.about-wrapper {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.about-text {
+    color: white;
+    text-align: center;
+    line-height: 2;
+    font-size: clamp(1.25rem, 5vw, 1.25rem);
+    margin: 0;
+}
+
+.text-section {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.image-section {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.text-section {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 1. Mobile View (Up to 767px) */
+@media (max-width: 767px) {
+    .page-wrapper-about {
+        width: 100vw;
+        padding: 1rem;
+    }
+
+    .about-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .text-section,
+    .image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .main-image-about {
+        height: auto;
+        max-height: 450px;
+        object-fit: cover;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+/* 2. Tablet View (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-wrapper-about {
+        width: 100vw;
+    }
+
+    .about-wrapper {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .text-section,
+    .image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .main-image-about {
+        max-height: 50vh;
+        object-fit: cover;
+    }
+}
+
+/* 3. Desktop View (1024px and up) */
+@media (min-width: 1024px) {
+    .page-wrapper-about {
+        /* width: 85vw; */
+        margin: 0;
+    }
+
+    .about-wrapper {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    .text-section {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+    .image-section {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .main-image-about {
+        height: 100%;
+        object-fit: cover;
+        object-position: top left;
+    }
+}
+
+/* End of About Page Styles */
