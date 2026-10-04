@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARMALEE</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/soundcloud.css" />
+    <link rel="stylesheet" href="css/audio_player.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper-soundcloud">
+      <header class="site-header">
+        <div class="header-container">
+          <a href="index.html" class="header-link">
+            <h1 id="index-header">MARMALEE</h1>
+          </a>
+
+          <button
+            class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav">
+          <ul class="mobile-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="upcoming.html">Upcoming Gigs</a></li>
+            <li><a href="projects.html">Past Projects</a></li>
+            <li>
+              <a href="soundcloud.html" class="current" aria-current="page">
+                SoundCloud
+              </a>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="container">
+        <section class="soundcloud-wrapper">
+          <div class="soundcloud-header">
+            <h2>
+              <a
+                href="https://soundcloud.com/user-251689987"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open MARMALEE's SoundCloud profile"
+              >
+                SoundCloud
+                <img
+                  src="assets/icons/external_link.svg"
+                  alt=""
+                  class="external-link-icon"
+                />
+              </a>
+            </h2>
+          </div>
+
+          <div class="soundcloud-player">
+            <iframe
+              width="100%"
+              height="450"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-251689987&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              title="Marmalee SoundCloud"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li class="footer-divider" aria-hidden="true">-</li>
+
+          <li><a href="upcoming.html">Upcoming Gigs</a></li>
+          <li class="footer-divider" aria-hidden="true">-</li>
+
+          <li><a href="projects.html">Past Projects</a></li>
+          <li class="footer-divider" aria-hidden="true">-</li>
+
+          <li>
+            <a href="soundcloud.html" class="current" aria-current="page">
+              SoundCloud
+            </a>
+          </li>
+
+          <li class="footer-divider" aria-hidden="true">-</li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="js/mobile_tablet_navbar.js"></script>
+    <script src="js/audio_player.js" type="module" defer></script>
+  </body>
+</html>

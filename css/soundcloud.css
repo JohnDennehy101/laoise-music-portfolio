@@ -1,0 +1,129 @@
+.page-wrapper-soundcloud {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.soundcloud-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0 3rem 0;
+    box-sizing: border-box;
+}
+
+.soundcloud-header {
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.soundcloud-header h2 {
+    margin: 0;
+}
+
+.soundcloud-header h2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.external-link-icon {
+    width: 0.7em;
+    height: 0.7em;
+    display: block;
+    flex-shrink: 0;
+    color: inherit;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.soundcloud-header h2 a:hover,
+.soundcloud-header h2 a:focus-visible {
+    transform: translateY(-2px);
+}
+
+.soundcloud-player {
+    width: 100%;
+}
+
+.soundcloud-player iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+/* 1. Mobile View (Up to 767px) */
+@media (max-width: 767px) {
+    .page-wrapper-soundcloud {
+        padding: 1rem;
+        height: 80vh;
+        box-sizing: border-box;
+    }
+
+    .soundcloud-wrapper {
+        padding: 0;
+        gap: 1rem;
+        height: calc(80vh - 2rem);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .soundcloud-player {
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .soundcloud-player iframe {
+        width: 100%;
+        height: 100% !important;
+        min-height: 250px;
+        border: 0;
+        flex-grow: 1;
+    }
+}
+
+
+/* 2. Tablet View (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .page-wrapper-soundcloud {
+        padding: 1.5rem;
+        min-height: 80vh;
+        box-sizing: border-box;
+    }
+
+    .soundcloud-wrapper {
+        gap: 1rem;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .soundcloud-player {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .soundcloud-player iframe {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 250px;
+        border: 0;
+    }
+}
