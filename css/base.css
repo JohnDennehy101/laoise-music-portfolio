@@ -249,7 +249,7 @@ body {
     }
 
     #index-header {
-        margin: 1.5rem 5% 0.5rem 5%;
+        margin: 0 0 0.5rem 0;
         font-size: clamp(3rem, 6vw, 4rem);
     }
 }
