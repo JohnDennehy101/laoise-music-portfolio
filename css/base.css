@@ -24,6 +24,11 @@ body {
     align-items: flex-start;
 }
 
+.header-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .image-section {
     flex: 5 1 0px;
     min-width: 0;
@@ -38,6 +43,13 @@ body {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 2rem 5% 1rem 5%;
     padding: 0;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header-link:hover #index-header {
+    transform: scale(1.02);
+    opacity: 0.75;
 }
 
 
