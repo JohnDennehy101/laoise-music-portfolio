@@ -27,6 +27,31 @@
     margin: 0;
 }
 
+.soundcloud-header h2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.external-link-icon {
+    width: 0.7em;
+    height: 0.7em;
+    display: block;
+    flex-shrink: 0;
+    color: inherit;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.soundcloud-header h2 a:hover,
+.soundcloud-header h2 a:focus-visible {
+    transform: translateY(-2px);
+}
+
 .soundcloud-player {
     width: 100%;
 }
