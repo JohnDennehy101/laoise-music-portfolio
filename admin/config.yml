@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "../assets/images"
+public_folder: "../assets/images"
+
+collections:
+  - name: "gigs"
+    label: "Upcoming Gigs"
+    files:
+      - file: "data/events.json"
+        label: "Gig List"
+        name: "events"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: '{{fields.venue}} - {{fields.date}}'
+            fields:
+              - { label: "Venue Name", name: "venue", widget: "string" }
+              - { label: "City / Location", name: "city", widget: "string", default: "Dublin, IE" }
+              - { label: "Date", name: "date", widget: "datetime", format: "DD-MM-YYYY", dateFormat: "DD-MM-YYYY", timeFormat: false }
+              - { label: "Ticket Link", name: "ticketUrl", widget: "string", required: false }
+              - { label: "Button Text (Optional)", name: "ticketText", widget: "string", required: false, default: "Get Tickets", hint: "Leave blank for default 'Get Tickets', or type 'RSVP' / 'Free Entry'" }
+              - { label: "Sold Out?", name: "soldOut", widget: "boolean", default: false }

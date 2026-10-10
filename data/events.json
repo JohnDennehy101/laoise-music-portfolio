@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "venue": "The Grand Social",
+      "city": "Dublin, IE",
+      "date": "15-11-2026",
+      "ticketUrl": "https://example.com/tickets",
+      "ticketText": "Get Tickets",
+      "soldOut": false
+    },
+    {
+      "venue": "Whelan's (Upstairs)",
+      "city": "Dublin, IE",
+      "date": "22-11-2026",
+      "ticketUrl": "https://example.com/rsvp",
+      "ticketText": "Free RSVP",
+      "soldOut": false
+    },
+    {
+      "venue": "Róisín Dubh",
+      "city": "Galway, IE",
+      "date": "05-12-2026",
+      "ticketUrl": "",
+      "ticketText": "",
+      "soldOut": true
+    }
+  ]
+}
