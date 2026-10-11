@@ -23,6 +23,13 @@
       "ticketUrl": "",
       "ticketText": "",
       "soldOut": true
+    },
+    {
+      "city": "Dublin, IE",
+      "ticketText": "Get Tickets",
+      "soldOut": false,
+      "venue": "Test Venue",
+      "date": "24-10-2026"
     }
   ]
 }
