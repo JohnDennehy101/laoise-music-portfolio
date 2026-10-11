@@ -44,7 +44,12 @@ export default class MusicPlayer {
               <h4 id="trackTitle">Loading...</h4>
               <p id="trackArtist"></p>
             </div>
-            <button class="lrc-close-btn" id="lrcCloseBtn" aria-label="Close Player">&times;</button>
+            <div class="lrc-header-actions">
+              <button class="lrc-expand-btn" id="lrcExpandBtn" aria-label="Expand Player" title="Expand Player">
+                <img src="assets/icons/expand_icon.svg" class="lrc-icon-expand" alt="" width="16" height="16">
+              </button>
+              <button class="lrc-close-btn" id="lrcCloseBtn" aria-label="Close Player">&times;</button>
+            </div>
           </div>
           <canvas class="lrc-visualizer-canvas" id="audioCanvas" width="350" height="60"></canvas>
           <div class="lrc-lyrics-container" id="lrcLyricsContainer">
@@ -74,6 +79,7 @@ export default class MusicPlayer {
     this.toggleBtnText = document.getElementById("toggleBtnText");
     this.drawer = document.getElementById("lrcDrawer");
     this.closeBtn = document.getElementById("lrcCloseBtn");
+    this.expandBtn = document.getElementById("lrcExpandBtn");
     this.playBtn = document.getElementById("lrcPlayBtn");
     this.prevBtn = document.getElementById("lrcPrevBtn");
     this.nextBtn = document.getElementById("lrcNextBtn");
@@ -97,6 +103,10 @@ export default class MusicPlayer {
     this.trackArtistEl.textContent = track.artist;
     this.audioElement.src = track.src;
     this.audioElement.currentTime = resumeTime;
+
+    if (this.lyricsContainer) {
+      this.lyricsContainer.scrollTop = 0;
+    }
 
     this.parsedLyrics = await this.lyricParser.load(track.lrcPath);
     if (this.parsedLyrics.length > 0) {
@@ -175,6 +185,39 @@ export default class MusicPlayer {
     this.loadTrack(nextIdx, 0, true);
   }
 
+  toggleDrawer() {
+    const isActive = this.drawer.classList.toggle("active");
+
+    if (isActive && window.innerWidth <= 768) {
+      this.drawer.classList.add("is-expanded");
+      const iconImg = this.expandBtn.querySelector("img");
+      if (iconImg) iconImg.src = "assets/icons/minimise_icon.svg";
+    }
+  }
+
+  closeDrawer() {
+    this.drawer.classList.remove("active");
+    this.drawer.classList.remove("is-expanded");
+
+    const iconImg = this.expandBtn.querySelector("img");
+    if (iconImg) iconImg.src = "assets/icons/expand_icon.svg";
+  }
+
+  toggleExpandSize() {
+    const isExpanded = this.drawer.classList.toggle("is-expanded");
+    const iconImg = this.expandBtn.querySelector("img");
+
+    if (iconImg) {
+      if (isExpanded) {
+        iconImg.src = "assets/icons/minimise_icon.svg";
+        this.expandBtn.setAttribute("title", "Minimise Player");
+      } else {
+        iconImg.src = "assets/icons/expand_icon.svg";
+        this.expandBtn.setAttribute("title", "Expand Player");
+      }
+    }
+  }
+
   handleTimeUpdate() {
     if (!this.audioElement.duration) return;
     const cur = this.audioElement.currentTime;
@@ -206,12 +249,9 @@ export default class MusicPlayer {
     this.prevBtn.addEventListener("click", () => this.changeTrack(-1));
     this.audioElement.addEventListener("ended", () => this.changeTrack(1));
 
-    this.toggleBtn.addEventListener("click", () =>
-      this.drawer.classList.toggle("active"),
-    );
-    this.closeBtn.addEventListener("click", () =>
-      this.drawer.classList.remove("active"),
-    );
+    this.toggleBtn.addEventListener("click", () => this.toggleDrawer());
+    this.closeBtn.addEventListener("click", () => this.closeDrawer());
+    this.expandBtn.addEventListener("click", () => this.toggleExpandSize());
 
     this.audioElement.addEventListener("loadedmetadata", () => {
       this.durationTimeEl.textContent = this.formatTime(

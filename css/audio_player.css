@@ -125,6 +125,55 @@
     pointer-events: auto;
 }
 
+.lrc-player-drawer.is-expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh;
+    max-width: 900px;
+    max-height: 800px;
+    z-index: 9999;
+}
+
+@media (max-width: 768px) {
+    .lrc-player-drawer.is-expanded {
+        top: 0px;
+        left: 0px;
+        transform: none;
+        width: 100vw;
+        height: 100vh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lrc-expand-btn {
+        display: none !important;
+    }
+
+    .lrc-player-drawer.is-expanded .lrc-lyrics-container {
+        flex: 1 1 0% !important;
+        min-height: 0 !important;
+        height: 0 !important;
+        max-height: none !important;
+        overflow-y: auto !important;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+}
+
+.lrc-player-drawer .lrc-lyrics-container {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
 .lrc-header {
     padding: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -143,6 +192,24 @@
     margin: 2px 0 0 0;
     font-size: 0.8rem;
     color: #aaa;
+}
+
+.lrc-expand-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.lrc-expand-btn:hover {
+    color: #fff;
+}
+
+.lrc-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .lrc-close-btn {
@@ -165,8 +232,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.lrc-player-drawer.is-expanded .lrc-visualizer-canvas {
+    height: 50px;
+}
+
 .lrc-lyrics-container {
-    height: 200px;
+    flex: 1;
+    min-height: 0;
+    max-height: 300px;
     overflow-y: auto;
     padding: 20px 16px;
     text-align: center;
@@ -201,10 +274,30 @@
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
+.lrc-player-drawer.is-expanded {
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.lrc-player-drawer.is-expanded .lrc-line {
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.lrc-player-drawer.is-expanded .lrc-line.active {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .lrc-controls {
     padding: 16px;
     background: rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lrc-player-drawer.is-expanded .lrc-controls {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .lrc-progress-area {
