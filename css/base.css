@@ -6,8 +6,6 @@
     font-display: swap;
 }
 
-
-
 html {
     height: 100%;
     margin: 0;
@@ -76,7 +74,6 @@ body {
     transform: scale(1.02);
     opacity: 0.75;
 }
-
 
 /* Start of Footer Styles */
 .site-footer {
@@ -162,7 +159,6 @@ body {
 }
 
 /* End of Footer Styles */
-
 
 /* Start of Mobile & Tablet Navigation Styles */
 .menu-toggle {

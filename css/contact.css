@@ -1,6 +1,9 @@
 /* Start of Contact Page Styles */
 .page-wrapper-contact {
-    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -97,6 +100,7 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 20px rgba(255, 42, 117, 0.25);
     align-self: flex-start;
@@ -156,6 +160,25 @@
 .social-link:hover .social-icon {
     transform: scale(1.1);
     fill: #ff2a75;
+}
+
+/* Contact Success Wrapper */
+.contact-success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* Contact Success Button Wrapper */
+.contact-home-button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 /* Mobile View (Up to 767px) */
