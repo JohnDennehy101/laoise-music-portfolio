@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       src: "assets/audio/come_back_to_me.m4a",
       lrcPath: "assets/audio/come_back_to_me.lrc",
     },
+    {
+      title: "Hop Scotch",
+      artist: "MARMALEE",
+      src: "assets/audio/hop_scotch.m4a",
+      lrcPath: "assets/audio/hop_scotch.lrc",
+    },
   ];
 
   new MusicPlayer(playlist);
